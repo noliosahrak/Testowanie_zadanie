@@ -1,6 +1,6 @@
 1. plik README.md ze skrótową dokumentacją - głownie instrukcją
 użycia aplikacji (w języku Markdown),
-2. algorytm obliczający ilość słów,
+2. algorytm obliczający ilość słów,                             //zrobione i zmergowane z master
 3. wyświetlanie prostego helpa jeżeli nie poda się parametrów
 programu,
 4. ładowanie danych z pliku,
