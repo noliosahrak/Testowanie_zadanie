@@ -17,36 +17,36 @@ public class Zadanie {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String s = " Raz dwa";
-        int wynik = liczenie(s);
+        String s = " Raz/dwa";                          //2
+        int wynik = liczenie(s,'/');
         System.out.println(wynik);
         
         ArrayList<String> lista = new ArrayList();
-        lista.add(s);                                   //2+3+5+7=17
-        lista.add("Kra kra kra");
-        lista.add(" Cos takiego niby cos tam   ");
-        lista.add("sdgji df wefn ef e     er r  ");
-        System.out.println(liczenieZListy(lista));
+        lista.add(s);                                   //2+2+5+7=16
+        lista.add("Kra kra /kra/");
+        lista.add(" Cos/takiego/niby/cos/tam   /");
+        lista.add("sdgji/df/wefn/ef/e  /   er/r/");
+        System.out.println(liczenieZListy(lista,'/'));
     }
     
-    public static int liczenie(String s) {
+    public static int liczenie(String s, char separator) {
         int ls = 1; //licznik słów
-        char poprzedni = ' ';
+        char poprzedni = separator;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c == ' ' && poprzedni != ' ') {
+            if (c == separator && poprzedni != separator) {
                 ls++;
             }
             poprzedni = c;
         }
-        if (s.charAt(s.length() - 1) == ' ') ls--;
+        if (s.charAt(s.length() - 1) == separator) ls--;
         return ls;
     }
     
-    public static int liczenieZListy(ArrayList<String> lista) {
+    public static int liczenieZListy(ArrayList<String> lista, char separator) {
         int ls = 0;
         for (String s : lista) {
-            ls += liczenie(s);
+            ls += liczenie(s,separator);
         }
         return ls;
     }
