@@ -6,6 +6,7 @@
 package zadanie;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -27,6 +28,31 @@ public class Zadanie {
         lista.add(" Cos/takiego/niby/cos/tam   /");
         lista.add("sdgji/df/wefn/ef/e  /   er/r/");
         System.out.println(liczenieZListy(lista,'/'));
+        
+        boolean zmiennaSterujaca = true;
+        int wybor;
+        Scanner sc = new Scanner(System.in);
+        
+        while (zmiennaSterujaca) {
+            System.out.println();
+            System.out.println("Co chcesz zrobić?");
+            System.out.println("1 - Przelicz słowa w pliku tekstowym");
+            System.out.println("2 - Wpisz tekst");
+            System.out.println("3 - Ustaw separator");
+            System.out.println("4 - Pomoc");
+            System.out.println("0 - Wyjście");
+            wybor = sc.nextInt();
+            switch (wybor) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 0:
+                    zmiennaSterujaca = false;
+            }
+        }
     }
     
     public static int liczenie(String s, char separator) {
