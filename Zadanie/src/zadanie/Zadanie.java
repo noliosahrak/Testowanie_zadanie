@@ -30,16 +30,15 @@ public class Zadanie {
     }
     
     public static int liczenie(String s, char separator) {
-        int ls = 1; //licznik słów
+        int ls = 0; //licznik słów
         char poprzedni = separator;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (c == separator && poprzedni != separator) {
+            if (c != separator && poprzedni == separator) {
                 ls++;
             }
             poprzedni = c;
         }
-        if (s.charAt(s.length() - 1) == separator) ls--;
         return ls;
     }
     
