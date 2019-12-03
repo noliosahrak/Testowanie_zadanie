@@ -4,7 +4,7 @@ użycia aplikacji (w języku Markdown),
 3. wyświetlanie prostego helpa jeżeli nie poda się parametrów
 programu,
 4. ładowanie danych z pliku,
-5. ładowanie danych ze standardowego wejścia (klawiatury lub
+5. ładowanie danych ze standardowego wejścia (klawiatury lub    //zrobione
 pipea),
-6. możliwość przekazania jako parametr alternatywnego separatora
+6. możliwość przekazania jako parametr alternatywnego separatora //zrobione
 słów zamiast spacji.
