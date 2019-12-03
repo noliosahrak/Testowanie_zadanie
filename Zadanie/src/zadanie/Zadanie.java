@@ -32,25 +32,41 @@ public class Zadanie {
         boolean zmiennaSterujaca = true;
         int wybor;
         Scanner sc = new Scanner(System.in);
+        char domyslnySeparator = ' ';
         
         while (zmiennaSterujaca) {
             System.out.println();
             System.out.println("Co chcesz zrobić?");
             System.out.println("1 - Przelicz słowa w pliku tekstowym");
-            System.out.println("2 - Wpisz tekst");
+            System.out.println("2 - Przelicz słowa w tekscie wpisanym z konsoli");
             System.out.println("3 - Ustaw separator");
             System.out.println("4 - Pomoc");
             System.out.println("0 - Wyjście");
+            
             wybor = sc.nextInt();
             switch (wybor) {
                 case 1:
+                    System.out.println("Podaj ścieżkę do pliku");
+                    String sciezka = sc.next();
+                    ArrayList<String> tekst = wcztajTekst(sciezka);
+                    System.out.println("W tym pliku jest "+liczenieZListy(tekst,domyslnySeparator)+" słów");
                     break;
                 case 2:
+                    sc.nextLine();
+                    System.out.println("Wpisz tekst:");
+                    s = sc.nextLine();
+                    System.out.println("W tej linii jest "+liczenie(s,domyslnySeparator)+" słów");
                     break;
                 case 3:
+                    System.out.println("Jaki znak ma być nowym separatorem? ");
+                    domyslnySeparator = sc.next().charAt(0);
+                    System.out.println("Nowy separtor to "+domyslnySeparator);
+                    break;
+                case 4:
+                    System.out.println("Tu umieścić pomoc");
                     break;
                 case 0:
-                    zmiennaSterujaca = false;
+                    zmiennaSterujaca = false;       //działa
             }
         }
     }
@@ -74,5 +90,9 @@ public class Zadanie {
             ls += liczenie(s,separator);
         }
         return ls;
+    }
+
+    private static ArrayList<String> wcztajTekst(String sciezka) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
